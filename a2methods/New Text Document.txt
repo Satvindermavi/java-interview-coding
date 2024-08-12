@@ -1,0 +1,92 @@
+111111111111.
+
+class A10 implements I 
+{
+
+
+void  m11(I i)
+
+{
+System.out.println("m11");
+}
+
+public static void main(String hathi[])
+ {
+
+ obj.m11(new A10());
+ 
+}
+
+}
+
+Interface I 
+{
+
+
+}
+
+222222222222.
+class A9 implements I 
+{
+
+
+void  m11(I i)
+
+{
+System.out.println("m11");
+}
+
+public static void main(String hathi[])
+ {
+ A10 obj = new A9();
+ obj.m11(obj);
+ 
+}
+
+}
+
+Interface I 
+{
+
+
+
+
+
+3.
+
+
+
+class B7
+{
+
+
+
+}
+
+class A7 {
+
+ B7  m11()
+     
+{
+System.out.println("A7");
+
+return objB;
+
+
+}
+
+public static void main(String hathi[])
+{
+ 
+A7 obj  = new A7();
+ 
+B7 objB = new B7();
+}
+}
+
+4. 
+
+String s = "Satvinder Singh  Mavi"; , Satvinder Singh mavi is string literal , String is class 
+
+Que : is string not a data type ?
+que : what is s ? is it a variable or refrence varaible ?

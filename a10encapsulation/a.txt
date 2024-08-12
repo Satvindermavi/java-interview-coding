@@ -1,0 +1,115 @@
+chaining tak hamnae jitna bhi parha tha  wah tha class k andar ki baatein 
+
+ab ham classs k bahar ki baatein shuru karenge , Encapsulation , Inheritence 
+
+Polymorphism
+
+
+
+que : what is encapsulation ?
+
+Ans : Encapsulation is nothing but wrapping up of  the data member and member 
+function 
+together into the single entity.
+
+que : what is the benifit of encapsulation ? 
+
+Ans : It is implemented in order to achieve the data hiding and hence we can conclude ki 
+it provide you with the security.
+
+Note:Classs is a way to  achieve the encapsulation.
+
+
+NOte: agar ham chahein ki ham , d.m ko private kar de ,aur data hiding achieve karne 
+
+ki koshish kareinn to ye  sahi nahi hai , kyuki agar koi chij private hogi to use ham
+
+bahar  use me nahi le ssakte uskaa ham objjecct create nahi kar sakte , hence agar ksi
+
+ne form me name ya paswword daalnaa haii , hamein yah pata hai ki name aur password
+
+to database me store  honge , lekin pehle to ye temoprarily kisi object me store honge
+
+jab user enter karega login form me se , ab jab hamre program me me hamne ihne private 
+
+banaya hoga , to iska object kaisse banayenege , private chije classs se bahar nahi 
+
+jaati , 
+
+1.HENCE IS PROBLEM KO SOLVE KARNE K LIYE CONCEPT LAYA GYA THAT I JAVA BEAN CLASS 
+
+2.NORMAL CLASS ME HI KUCCH ENHANCEMENTS KAR K / NAYE FEATURES INCLUDE KAR K USE 
+
+JAVA BEAN CLASS BANA DIYA JAAT HAAI
+
+NOte: Normal class is not the example of 100 percent encapsulation(data hiding).
+
+NOte : 100 percent data hiding can be achieved using the Java bean class
+
+
+*** 
+Java bean class is also called the POJO (Plain OLd Java Object)
+
+Every java bean is POJO but eveery POJO is not Java bean.
+
+A java bean is the genral purpose reusable piece of code , which is created only once 
+and should have the following characterstics:
+
+1. this class must be public.
+(AB YE MAT SOCHNA KI  sir public bna diya to security nahi hogi , arre public to 
+
+isliiye banaya hai taaki use  acccess ka payein )
+
+2. this class must be inside package.
+
+3. the data member of the classs must be private.
+
+4. it should not extend any specific  class and also it should not implement any
+ specific  interface, it must implement serializable interface.\
+
+5. this  classs muust have public seter and getter methods.(also cald properties method)
+
+(private data me anyhow , values insert karne k liye hi publicc setter getter methods
+ banaye jaatein hain )
+
+6. this class shoould have public default constructor.
+
+package com.coders.mavi;
+public class Encapsulation1
+{
+  String email,password;
+
+void detail()
+{
+System.out.println("your email is :"+email);
+System.out.println("your passsword is :"+password);
+
+}
+
+public static void main(String hathi[])
+{
+ Encapsulation1 obj = new Encapsulation1();
+obj.email = "satvindersingh3812@gmail.com";
+obj.password = "mavi.mavi";
+obj.detail();
+
+}
+}
+
+
+setter me jaaruri nahi ki ha data object ko call karte waqt bheje , ham usme data ko 
+
+
+scanner ki help se bhi ssakte , arre ham koi bhi tarika istemaal karr sakte hain 
+
+
+Scanner s = new Scanner (System.in);
+
+System.out.println("Enter your Name");
+
+String name/n = s.next();
+
+void seter (name/n)
+{
+this.name = name/n;
+}

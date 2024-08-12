@@ -1,0 +1,364 @@
+PROGRAM 1 TODAY'S CLASS PROGRAM 1 TODAY'S CLASS PROGRAM 1 TODAY'S CLASS PROGRAM 1 TODAY'S CLASS
+class Demo
+{
+int x=10;
+
+void disp()
+{
+int x=20;
+
+System.out.println(x);
+System.out.println(x);
+}
+
+
+public static void main(String ss[])
+{
+Demo d=new Demo();
+d.disp();
+}
+} 
+
+
+Is program ko jaB hame run kiya to , to hamara output kuch is parKaar ayeya : 
+20
+20 
+hua kya ki jo instance wala x tha us par local waale x ki shadow par gayi 
+and hence hamein output me 10 10 milne ki bajaye 20 20 mil gya 
+
+Conclusion : jab local aur instance variable ka naam same ho jaata hai ,
+ to local wala instance par bhari par jaata hai 
+
+PROGRAM 2 TODAY'S CLASS PROGRAM 2 TODAY'S CLASS PROGRAM 2 TODAY'S CLASS PROGRAM 2 TODAY'S CLASS
+
+class Demo 
+{
+
+// declaration of the intance data members
+
+String name;
+int age ;
+
+Demo (String name , int age )
+ /*here we promsed that whenevr this will b caalled ,
+ we will always pass one string and one integerr value as an argument*/
+
+{
+name = name;
+age = age ;
+}
+
+// by writing this we are expecting here ki , jo value hamne disp me pass kari hogi 
+// wah instance waale name me hold ho jayeegi 
+// lekin aissa nahi hoga
+// shadowing hogi , instance aur local data memebrs k naam same hain , confliction hogi 
+// ant me jeet local waale ki hi hogi .
+// scanerio kuch is tarha ka hoga : suppose Satvinder SIngh , 23 value pass hui :
+/* Satvinder SIngh = Satvinder SIngh;
+   23 = 23;
+ which are two valid java statements
+*/
+
+void disp()
+{
+System.out.println(name);
+System.out.println(age);
+}
+
+}
+public static void main (String hathi[])
+{
+Demo obj = new Demo("Satvinder",23);
+obj.disp();
+// hamne display method ko object par call kiya 
+// chunki instance wale name and age me abhi value by default wali hi hai usme to value 
+//initialise hui hi nahi thi hence :
+}
+
+}
+/*
+The output of the above program will be : 
+null // String ki by default value null hoti hai
+0 // int ki by default  value 0 hoti hai
+10:42 PM
+
+PROGRAM 3 TODAY'S CLASS PROGRAM 3 TODAY'S CLASS PROGRAM 3 TODAY'S CLASS PROGRAM 3 TODAY'S CLASS
+
+class Student
+{
+String name;
+int age;
+
+Student(String na,int a)
+{
+name=na; // yaha par koio confliction ni hui hece data sidha jakar store ho gya instance d.m me
+age=a;// beacuse intance aur locl d.m ka namm alag alag hai
+
+//name = Satvinder Singh;
+//age = 23;
+}
+
+void show()
+{
+System.out.println(name);
+System.out.println(age);
+}
+
+public static void main(String ss[])
+{
+Student s=new Student("Satvinder Singh",23);
+s.show();
+}
+
+}
+
+/*Therefore the output of the program will be :
+Satvinder Singh
+23*/
+10:48 PM
+PROGRAM 4 TODAY'S CLASSPROGRAM 4 TODAY'S CLASSPROGRAM 4 TODAY'S CLASS PROGRAM 4 TODAY'S CLASS
+class Demo 
+{
+
+int x = 10; // instance d.m , gets stored in object (heap area)
+
+void disp(int x) // local d.m
+{
+System.out.println(x);
+System.out.println(x);
+/*
+yah par whi we were expecting ki we would get 10 10 but we ll get 30 30 ,
+
+because local wale x ne instance wale x par shadow kardi, wah uspar haavi ho gya
+
+*/
+}
+public static void main (String hathi[])
+{
+
+Demo d = new Demo();
+d.disp(30);
+}
+
+}
+output : 30 30
+
+PROGRAM 5 TODAY'S CLASS PROGRAM 5 TODAY'S CLASS PROGRAM 5 TODAY'S CLASS PROGRAM 5 TODAY'S CLASS
+
+class Demo 
+{
+
+int x = 10; 
+
+void disp(int x, Demo d) // current object ka refrence as a parameter isme paas kar diya
+{
+System.out.println(d.x);// phir ab us object k refrence pe instance ko call kar diya
+System.out.println(d.x);
+System.out.println(x);//10
+System.out.println(x);//10
+
+
+}
+public static void main (String hathi[])
+{
+
+Demo d = new Demo();
+d.disp(30 , d); // yaha se hamne current object ka rfrence bhej dia
+}
+
+}
+
+/*output
+C:\Users\svc270423\OneDrive\Desktop\javalibrary\fundamenals>javac Demo.java
+
+C:\Users\svc270423\OneDrive\Desktop\javalibrary\fundamenals>java Demo
+10
+10
+30
+30
+*/
+11:03 PM
+
+PROGRAM 6 TODAY'S CLASS  PROGRAM 6 TODAY'S CLASS PROGRAM 6 TODAY'S CLASS PROGRAM 6 TODAY'S CLASS
+
+class Demo 
+{
+
+int x = 10; 
+
+void disp(int x) 
+{
+System.out.println(d.x);// yaha par hamne static refrence varibale (which is also a local one)
+System.out.println(d.x);// ko call karwana chaha non-static method me
+
+
+}
+public static void main (String hathi[])
+{
+
+Demo d = new Demo();
+d.disp(30); 
+}
+
+}
+hence we wil get the errro as: 
+
+Demo.java:8: error: cannot find symbol
+System.out.println(d.x);// yaha par hamne static refrence varibale (which is also a local one)
+                   ^
+  symbol:   variable d
+  location: class Demo
+Demo.java:9: error: cannot find symbol
+System.out.println(d.x);// ko call karwana chaha non-static method me
+                   ^
+  symbol:   variable d
+  location: class Demo
+2 errors
+Ab agar hamne instance ko haavi dikhana hai to ya to aise hi traditional way me uska refrence as an argument send karna parega : or for this we have special type of the concept given by java i.e; concept of 'this'
+About this :
+1.this is an implicit refrence varible , which hold the refrence id of the current object. 
+2. when due to data shadowing the preference off the instance varible becoms low than the local one , than we use ''this"
+3.this cannot be used in the static area , however it is implicityly  available there in the constructor or the non static methods 
+Important thing to note about the this keyword is that , 'this' is by default final and public , and hence we can not add any other object or their reffrence in the this 
+use of this: 
+It is used in case of the naming confliction between the same name of local ass well as instance data member
+11:23 PM
+
+
+PROGRAM 7 TODAY'S CLASS PROGRAM 7 TODAY'S CLASS PROGRAM 7 TODAY'S CLASS PROGRAM 7 TODAY'S CLASS
+
+class Demo 
+{
+
+String name;
+int age;
+
+Demo(String name , int age)
+{
+this.name = name;
+this.age = age;
+
+/*
+this.name likkhte hi hmara compiler samjh jayega ki instance wale name and age of value ko hold
+karwana hai 
+name = Satvinder Singh;
+age = 23;
+*/
+
+}
+void disp()
+{
+System.out.println(name);
+System.out.println(age);
+}
+public static void main(String hathi[])
+{
+Demo obj = new Demo("Satvinder Singh",23);
+obj.disp();
+
+}
+}
+11:36 PM
+program 8:
+
+program 8:
+
+we can check that whether the ,this varibale holds the refrence id of the current object or not :
+
+// sabki refrence id same aanai chahiye output me
+
+class Demo
+{
+
+Demo()
+{
+System.out.println(this);
+}
+
+void disp()
+{
+System.out.println(this);
+}
+
+public static void main(String hathi[])
+{
+Demo obj = new Demo();
+obj.disp();
+System.out.println(obj);
+
+}
+
+}
+/*
+output:
+Demo@15db9742
+Demo@15db9742
+Demo@15db9742
+*/
+bAsically what happens is that ki , jab bhi hamara costructor ya non staticc method call hota hai to usme current object ki refrence id as as argument paas ho jaati  hai internally and usi ko 'this' variable hold kra leta hai 
+this variable always points to the current object
+11:56 PM
+class Demo 
+{
+int z = 20;
+int y =20;
+
+void disp(int y)
+{
+
+int z = 10;
+System.out.println(this.z);
+System.out.println(this.y);
+}
+
+public static void main(String hathi[])
+{
+Demo obj = new Demo();
+obj.disp(10);
+}
+}
+output:
+20
+20
+12:04 AM
+class Demo 
+{
+
+void disp()
+{
+
+System.out.println(this);
+}
+Demo()
+{
+System.out.println(this);
+}
+public static void main(String hathi[])
+{
+Demo obj = new Demo();
+obj.disp();
+System.out.println(obj);
+
+System.out.println("**********");
+
+Demo obj1= new Demo();
+obj1.disp();
+System.out.println(obj1);
+}
+
+}
+/*
+output :
+Demo@15db9742
+Demo@15db9742
+Demo@15db9742
+**********
+Demo@6d06d69c
+Demo@6d06d69c
+Demo@6d06d69c
+*/
+hence we can conclude ki this always refers the curret object
+
+Chaining karne k baas yah tatparya nikaala ki 
+
+this can also be used to invoke a method

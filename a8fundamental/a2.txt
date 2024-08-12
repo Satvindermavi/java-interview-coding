@@ -1,0 +1,601 @@
+Literals : 
+
+int x = 10; 
+
+here ,
+
+literals are constant values that are assigned to the variables.
+
+in the above example : int is data type 
+                       x is variable 
+                       = is the assignment operator 
+                       10 is constant value i.e; literal 
+
+
+- Following are the types of the Literals in java :
+
+a. Integeral Literals 
+
+b.Floating point Literals
+
+c.Boolean Literals 
+
+d.Char Literals 
+
+e. String Literals 
+
+
+
+
+Integeral Literals : 
+
+
+for the integeral data types , like : byte, short , int , long. we can
+
+specify literal values in the following ways : 
+
+
+1.
+decimal form (BASE-10), 0 to 9 digits are allowed.
+
+for example , int x = 15; // 15
+ 
+2.
+octal form (BASE-8), 0 to 7 digits are allowed.
+
+Note: Literal Should be prefixed with zero
+
+for example , int x = 010; // 
+
+3.
+hexa-decimal form (BASE-16), (0 to 9 , and a/A to f/F are allowed)
+
+NOTE: literal should be prefixed with 0x or 0X .
+
+for example , int x = 0X10; // 
+
+4.
+From the 1.7 version the , integeral literals can also be 
+
+represented in the form of the BINARY 
+
+for example , int x = 0B1111; // 15
+
+
+The above discusssed are very few areas where java is not case 
+sensitive.
+
+
+
+1.
+
+
+class i1
+{
+
+public static void main(String hathi[])
+{
+int x =5; // decimal form
+
+System.out.println(x); //5
+
+
+int y = 05; // octal form
+
+System.out.println(y); //5
+
+
+int z = 0X5; // hexadecimal form
+
+System.out.println(z); //5
+
+int a = 0B101; // Binary form
+
+System.out.println(a); //5
+
+
+
+}
+}
+
+2.
+
+class i2
+{
+
+public static void main(String hathi[])
+{
+int x =300; // decimal form
+
+System.out.println(x); //300
+
+
+int y = 0300; // octal form
+
+System.out.println(y); //192
+
+
+int z = 0X300; // hexadecimal form
+
+System.out.println(z); //768
+
+int a = 0B100101100; // Binary form
+
+System.out.println(a); //300
+
+
+}
+}
+
+
+3.
+
+class i3
+{
+
+public static void main(String hathi[])
+{
+int x =0777; // octal form
+
+System.out.println(x); // 511 
+
+
+short x =0777; // octal form
+
+System.out.println(x); // 511 
+
+
+long x =0777; // octal form
+
+System.out.println(x); // 511 
+
+
+}
+}
+
+Note : 
+1.this is the maximum integeral  value that can be represented 
+in the octal form.
+2.0777 can not be stored into the byte type , 
+
+
+
+4.
+
+class i4
+{
+
+public static void main(String hathi[])
+{
+int x =0778; // octal form
+
+System.out.println(x); 
+
+}
+}
+
+note : symbol 8 is not allowed in the  octal form 
+
+/*
+error: integer number too large: 0778
+int x =0778; // octal form
+       ^
+*/
+
+
+5.
+
+class i5
+{
+
+public static void main(String hathi[])
+{
+byte x =0777; // octal form
+
+System.out.println(x); 
+
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from int to byte
+byte x =0777; // octal form
+        ^
+1 error
+
+*/
+
+
+6.
+
+class i6
+{
+
+public static void main(String hathi[])
+{
+float x =0777; // octal form
+
+System.out.println(x); //511.0
+
+double y = 0656; // octal form 
+
+System.out.println(y); //430.0
+
+double z = x;
+
+System.out.println(z); // 511.0
+
+
+float a = x;
+
+System.out.println(a); // 511.0
+
+}
+}
+
+7.
+
+class i7
+{
+
+public static void main(String hathi[])
+{
+int x = 0X45;
+System.out.println(x); //69
+
+
+int y = 0Xfeeb;
+
+System.out.println(y); //65259
+
+
+}
+}
+
+
+8.
+
+class i8
+{
+
+public static void main(String hathi[])
+{
+
+short y = 0Xfeeb;
+
+System.out.println(y); 
+
+// the maximum value that wee can store in the short is 32767
+
+
+}
+}
+
+
+ error: incompatible types: possible lossy conversion from int to short
+short y = 0Xfeeb;
+          ^
+1 error
+
+
+9.
+
+class i9
+{
+
+public static void main(String hathi[])
+{
+byte x = 0X45;
+System.out.println(x); 
+
+
+char y = x;
+
+System.out.println(y);
+
+}
+}
+/*
+
+: error: incompatible types: possible lossy conversion from byte to char
+char y = x;
+         ^
+
+*/
+
+
+10.
+
+
+
+class i10
+{
+
+public static void main(String hathi[])
+{
+byte x = 0X45;
+System.out.println(x); //69
+
+
+char y = 0x45;
+
+System.out.println(y); // E
+
+}
+}
+/*
+
+: error: incompatible types: possible lossy conversion from byte to char
+char y = x;
+         ^
+
+*/
+
+
+
+
+11.
+
+class i11
+{
+
+public static void main(String hathi[])
+{
+int x = k;
+
+System.out.println(x);
+
+
+
+}
+}
+
+/*
+error: cannot find symbol
+int x = k;
+        ^
+  symbol:   variable k
+  location: class i11
+1 error
+
+*/
+
+
+12.
+
+
+class i12
+{
+
+public static void main(String hathi[])
+{
+int x = 0k;
+
+System.out.println(x);
+
+
+
+}
+}
+/*
+ error: ';' expected
+int x = 0k;
+         ^
+*/
+
+
+
+13.
+
+class i13
+{
+
+public static void main(String hathi[])
+{
+int x = 0Xk;
+
+System.out.println(x);
+
+
+
+}
+}
+/*
+ error: hexadecimal numbers must contain at least one hexadecimal digit
+int x = 0Xk;
+        ^
+i13.java:6: error: not a statement
+int x = 0Xk;
+          ^
+2 errors
+*/
+
+
+
+
+14.
+
+class i14
+{
+
+public static void main(String hathi[])
+{
+int x = 0Xa;
+
+System.out.println(x);//10
+
+
+
+}
+}
+
+15.
+
+
+class i15
+{
+
+public static void main(String hathi[])
+{
+int x = 0X;
+
+System.out.println(x);
+
+
+}
+}
+
+/*
+error: hexadecimal numbers must contain at least one hexadecimal digit
+int x = 0X;
+        ^
+1 error
+*/
+
+
+
+
+
+16.
+
+
+class i16
+{
+
+public static void main(String hathi[])
+{
+int x = 10;       //10
+int y = 010;     //8
+int z = 0x10;   //16
+
+System.out.println(x+y+z); //34
+}
+}
+
+
+
+
+user/programer have the choice to determine ,octal ,decimal,etc but 
+the compiler will consider the decimal equivalent.
+
+MYTH : 10b ,20s repreesents 10 of byte and 20 of short data type ,
+but there is no such convention.
+
+conclusion : there is no direct way to specify byte and short
+ liteerals explicitly , long can be specified explicitly using
+L or l. t
+this is one of the few areas where java is not case sensitive.
+
+
+
+
+
+
+
+
+FLOATING POINT LITERALS :
+
+floating point literals can only be rerresented in the form of the 
+decimal number representation.
+
+for example :float f = 123.456;
+
+By default every decimal points wala literals are considered to be
+
+as double , hence in the above example how can be store 8 bytes data
+(123.456) to f of 4 bytes. therefore the error will occur
+
+
+
+17.
+
+
+class i17
+{
+
+public static void main(String hathi[])
+{
+
+double a = 123.4567d; 
+
+// we can specify double by appending d or D but its not a good 
+//code practice.
+
+double b = 123.46644D;
+
+
+double c = 123.45;
+
+System.out.println(a);
+
+System.out.println(b);
+}
+}
+
+18.
+
+class i18
+{
+
+public static void main(String hathi[])
+{
+
+double a =  123.456;
+
+
+System.out.println(a);
+
+double b = 0123.456;// compiler will treat it as decimal only nt octal
+
+System.out.println(b); 
+
+
+}
+}
+
+/*
+
+output : 
+
+123.456
+123.456
+
+
+*/
+
+
+
+
+19.
+
+class i19
+{
+
+public static void main(String hathi[])
+{
+
+double a = 0X123.4567; 
+
+System.out.println(a);
+
+float b = 0x123.456F;
+
+System.out.println(b);
+
+}
+}
+/*
+error: malformed floating point literal
+double a = 0X123.4567;
+           ^
+i19.java:11: error: malformed floating point literal
+float b = 0x123.456F;
+          ^
+2 errors
+*/
+
+
+
+
+
+
+

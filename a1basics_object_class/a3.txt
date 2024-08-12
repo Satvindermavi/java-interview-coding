@@ -1,0 +1,10 @@
+import java.util.Scanner;
+class a8
+{
+
+public static void main (String args[])
+{
+Student13 s1 = new Student13();
+System.out.println(s1);
+}
+}

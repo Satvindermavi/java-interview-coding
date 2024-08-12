@@ -1,0 +1,16 @@
+class Check7 {
+
+Check7(int c, int d)
+{
+ int e =c;
+ int f =d;
+ System.out.println("The sum"+(e+f));
+}
+
+public static void main(String args[])
+{
+
+Check7 c7 = new Check(5,6);
+}
+}
+

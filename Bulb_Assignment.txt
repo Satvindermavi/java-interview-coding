@@ -1,0 +1,49 @@
+class Bulb 
+{
+
+int watt;
+
+float price;
+
+String color;
+
+boolean state;
+
+int counter;
+
+static String cname;
+
+
+
+void showDetails(int w , float p , String c , boolean s , String cn)
+{
+System.out.println("Bulb's Unit in watt : ");
+
+System.out.println("Bulb's price is : ");
+
+System.out.println("Bulb's color is : ");
+
+System.out.println("Bulb's state   : ");
+
+System.out.println("Bulb's company name : ");
+
+}
+
+void changeState()
+{}
+
+void countBulb()
+{}
+
+void changeCompanayName()
+{}
+
+
+
+public static void main (String hathi[])
+{
+
+Bulb obj = new Bulb();
+obj.showDetails(9,264,"blue","on","Syska");
+}
+}

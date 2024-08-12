@@ -1,0 +1,27 @@
+class Static22
+{
+//mat bhulo ki method k kisi na kisi logic k andar likhna hai.
+
+ static
+{
+System.out.println("static22 class is loaded");
+}
+public static void main(String args[])
+{}
+}
+
+class ClassLoading
+{
+Static22 s = new Static22();
+static
+{
+System.out.println("classloadind is loaded");
+}
+
+
+public static void main(String hathi[])
+{
+
+}
+
+}

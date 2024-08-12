@@ -1,0 +1,19 @@
+class This11
+{
+// non static ko to non stattic me refer kar hi sakte hain
+
+
+class Test 
+{
+
+String name;
+int age;
+public static void main (String hathi[])
+{
+This10 obj = new This10();
+
+
+
+}
+
+}

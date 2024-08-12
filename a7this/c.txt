@@ -1,0 +1,42 @@
+/* Fourth usse of this keyword 
+
+   It can be used to call the methodd also.
+*/
+
+
+
+class This12
+{
+
+void show (){
+
+System.out.println("obj ki help se show call hua");
+
+this.display();
+}
+
+void display()
+{
+
+
+System.out.println("this ki help se display call hoga");
+}
+
+
+
+public static void main (String args[])
+{
+
+This12 obj = new This12();
+
+obj.show();
+
+//this.show(); 
+
+/*
+how could i forget that this ko ham static me use nahi kr sakte 
+*/
+
+}
+
+}

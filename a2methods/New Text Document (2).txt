@@ -1,0 +1,21 @@
+class Method20
+{
+
+
+static void Mavi(int ...i) // using varg arg 
+{
+System.out.println("mavi Coders");
+}
+
+public static void main (String hathi[])
+
+{
+
+System.out.println("Method ko bina argument pass kiye call karenge ");
+
+
+Mavi();
+
+}
+
+}

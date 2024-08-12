@@ -1,0 +1,21 @@
+class A 
+{
+
+static 
+{
+
+System.out.println("jav kisi aur class k objecct creat karte ho")
+System.out.println("static class loadig hogi , kyuki compiler ko pehle");
+System.out.println("hi pata hai ki A class ko load karna hai And B ko");
+}
+
+}
+
+class B extends A 
+{
+public static void main (String args[])
+{
+
+
+}
+}

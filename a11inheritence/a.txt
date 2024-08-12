@@ -1,0 +1,58 @@
+// inheritence 
+
+class Base 
+{
+
+int x =10;
+
+Base()
+{
+System.out.println(x);
+show(); // yah par directly call kar sakte hain
+}
+
+
+void show()
+{
+System.out.println("Show of base");
+}
+
+public static void main(String args[])
+{
+System.out.println(new Base().x);
+new Base().show();
+Base b = new Base();
+System.out.println(b.x);
+b.show();
+}
+}
+
+// these all are applcable with the child class also
+
+class Child extends Base
+{
+/*public static void main(String args[])
+{
+System.out.println(new Base().x);
+new Base().show();
+Base b = new Base();
+System.out.println(b.x);
+b.show();
+NOTE : Aise bhi chal jayegaa. lekin phir extend krane ka 
+kya faydaa child ko use karo
+*/
+
+public static void main(String args[])
+{
+System.out.println(new Child().x);
+new Child().show();
+Child b = new Child();
+System.out.println(b.x);
+b.show();
+}
+
+
+}
+
+
+}

@@ -1,0 +1,1115 @@
+5.Boolean data type
+6.float data type
+7.double data type
+8.primitive data type
+
+
+
+
+
+BOOLEAN DATA TYPE : BOOLEAN DATA TYPE : BOOLEAN DATA TYPE :
+
+
+
+ 
+-only two values gets stored in it , either true or false.
+-in case of c/c++ size of boolean is  1 bit.
+-In case of java the size of boolean is dependent on the VM.
+
+
+1.
+
+class E1
+{
+
+public static void main(String hathi[])
+{
+boolean a =true;
+System.out.println(a);// true
+}
+}
+/*
+
+*/
+
+2.
+
+class E2
+{
+
+public static void main(String hathi[])
+{
+boolean a =True; 
+System.out.println(a);
+}
+}
+
+ENOTE: jab compiler ko kuch samjh nahi ata to wah us chij ko 
+variable maan leta hai , yaha par usne True ko varibale connsider
+kar liya lekin aisa , variabl kahi declare to thaa nahi hence
+can not find symbol wala error a jayega.
+/*
+
+  error: cannot find symbol
+boolean a =True;
+           ^
+  symbol:   variable True
+  location: class E2
+1 error
+*/
+
+
+
+3.
+
+class E3
+{
+
+public static void main(String hathi[])
+{
+boolean a ="True";
+System.out.println(a);
+}
+}
+/*
+error: incompatible types: String cannot be converted to boolean
+boolean a ="True";
+           ^
+1 error
+ 
+*/
+
+4.
+
+class E5
+{
+
+public static void main(String hathi[])
+{
+boolean a ='a';
+System.out.println(a);
+}
+}
+/*
+error: incompatible types: char cannot be converted to boolean
+boolean a ='a';
+           ^
+ 
+*/
+
+5.
+
+
+class E6
+{
+
+public static void main(String hathi[])
+{
+boolean a ='ab';
+System.out.println(a);
+}
+}
+/*
+error: unclosed character literal
+boolean a ='ab';
+           ^
+E6.java:6: error: unclosed character literal
+boolean a ='ab';
+              ^
+E6.java:6: error: not a statement
+boolean a ='ab';
+
+           ^
+ 
+*/
+
+6.
+class E7
+{
+
+public static void main(String hathi[])
+{
+boolean a =567; // c/C++ me yahi chij ko wah true de deta hai
+System.out.println(a);
+}
+}
+/*
+ error: incompatible types: int cannot be converted to boolean
+boolean a =567;
+           ^
+1 error
+ 
+*/
+
+7.
+
+
+class E8
+{
+
+public static void main(String hathi[])
+{
+boolean a =21474483648;
+System.out.println(a);
+}
+}
+/*
+ error: integer number too large: 21474483648
+boolean a =21474483648;
+           ^
+ 
+*/
+
+8.
+
+
+class E9
+{
+
+public static void main(String hathi[])
+{
+
+byte b=124;
+boolean a =b;
+System.out.println(a);
+}
+}
+/*
+  error: incompatible types: byte cannot be converted to boolean
+boolean a =b;
+*/
+
+
+9.
+
+class E10
+{
+
+public static void main(String hathi[])
+{
+
+
+boolean a =4.5f;
+System.out.println(a);
+}
+}
+/*
+  error: incompatible types: float cannot be converted to boolean
+boolean a =b;
+*/
+
+10.
+
+class E11
+{
+
+public static void main(String hathi[])
+{
+
+
+boolean a =4.5;
+System.out.println(a);
+}
+}
+/*
+  error: incompatible types: double cannot be converted to boolean
+boolean a =4.5;
+*/
+
+
+11.
+
+
+class E12
+{
+
+public static void main(String hathi[])
+{
+
+
+boolean a =1;
+System.out.println(a);
+}
+}
+/*
+  error: incompatible types: int cannot be converted to boolean
+boolean a =1;
+*/
+
+
+
+FLOAT DATA TYPE : FLOAT DATA TYPE : FLOAT DATA TYPE 
+
+
+
+1.
+
+class f1
+{
+
+public static void main(String hathi[])
+{
+float a = 9f;
+System.out.println(a);
+a=9.0f;
+System.out.println(a);
+a= 9.5f;
+System.out.println(a);
+}
+}
+/*
+output:
+9.0
+9.0
+9.5
+ 
+*/
+
+2.
+
+Note: by default aapko six decimals tak value provide karta hai
+
+class f2
+{
+
+public static void main(String hathi[])
+{
+float a = 9.123467f;
+System.out.println(a);//9.123467
+
+float b= 9.1223489f;
+System.out.println(b);//9.122349
+
+float c= 9.1223481f
+
+System.out.println(c);// 9.122348
+
+}
+}
+/*
+
+*/
+
+3.
+
+class f3
+{
+
+public static void main(String hathi[])
+{
+float a = 9.123467f;
+
+// print upto four decimal places
+
+System.out.printf("%.4f",a);//9.1235 ROUND OFFF KARK OUTPUT DIYA
+
+a = 9.12341f;
+System.out.println();
+
+System.out.printf("%.4f",a);//9.1234
+
+}
+}
+
+
+
+4.
+
+Note:
+ 
+1.BYTE KO FLOAT ME STORE KRAYA JAA SAKTA HAI
+
+2.SHORT KO FLOAT ME STORE KRAYA JAA SAKTA HAI
+
+3.INT KO FLOAT ME STORE KRAYA JAA SAKTA HAI
+
+
+class f4
+{
+
+public static void main(String hathi[])
+{
+byte b=1;
+short c =2;
+float a = b;
+float e= b+c;
+
+System.out.println(e);
+//3.0 MAX OF(int,byte,short), hence yaha par int ko float me badla
+
+System.out.println(a);//1.0 
+
+ a =c;
+
+System.out.println(a);//2.0
+
+
+
+}
+}
+
+
+5.
+
+
+class f5
+{
+
+public static void main(String hathi[])
+{
+float a = 'A'; //corrersponding unicode values converted into float
+
+System.out.println("float:"+a); //65.0
+
+byte b = 'A';
+System.out.println("byte : "+b);//65
+
+
+
+int c = 'A';
+
+
+System.out.println("int :"+c);//65
+
+
+char d = 'A';
+
+System.out.println("char :"+d); //A
+
+
+short e = 'A';
+
+System.out.println("short:"+e); //65
+
+
+double f = 'A';
+
+System.out.println("double :"+f); //65.0
+
+
+char e = 97;
+
+
+System.out.println(e);
+
+
+
+
+
+
+}
+}
+/*
+output:
+float:65.0
+byte : 65
+int :65
+char :A
+short:65
+double :65.0
+*/
+
+
+
+6.
+
+
+class f6
+{
+
+public static void main(String hathi[])
+{
+float a = '?i'; //
+System.out.println(a);
+
+}
+}
+/*
+error: unclosed character literal
+float a = '?i'; //
+          ^
+f6.java:6: error: unclosed character literal
+float a = '?i'; //
+             ^
+f6.java:6: error: not a statement
+float a = '?i'; //
+*/
+
+
+7.
+
+class f8
+{
+
+public static void main(String hathi[])
+{
+float a = true;
+float b = "true";
+float c = True;
+float d = 45.7;
+float e = new f8();
+
+}
+}
+/*
+error: incompatible types: boolean cannot be converted to float
+float a = true;
+          ^
+f8.java:7: error: incompatible types: String cannot be converted to float
+float b = "true";
+          ^
+f8.java:8: error: cannot find symbol
+float c = True;
+          ^
+  symbol:   variable True
+  location: class f8
+f8.java:9: error: incompatible types: possible lossy conversion from double to float
+float d = 45.7;
+          ^
+f8.java:10: error: incompatible types: f8 cannot be converted to float
+float e = new f8();
+          ^
+5 errors
+
+ 
+*/
+
+8.
+
+
+
+class f9{
+
+
+public static void main (String hathi[])
+{
+
+// you can write small f or capital F 
+
+float a = 45F;
+
+System.out.println(a);
+
+
+float b = 45.6f;
+
+System.out.printf("%.7f",b); // 45.5999985
+
+
+System.out.println();
+
+System.out.printf("%.4f",b); //45.6000
+
+System.out.println();
+
+System.out.printf("%.5f",b); //45.60000
+
+
+System.out.println();
+
+System.out.printf("%.6f",b); //45.599998
+
+}
+
+}
+
+
+9.
+
+
+
+/*
+note 1: It is wrong to say that if we want to represent the small
+ decimal values then we use float as a datatype ,and if we want to 
+use larger decimal values then use doouble as the data type.
+
+Infact ,
+
+if we want upto six decimal places acuracy , then go for the float 
+
+and if you want accuracy more than 6 decimal places then 
+
+go with double.
+
+note 1: accuracy here refers to the precision
+
+*/
+
+
+class f10{
+
+
+
+public static void main (String hathi[])
+{
+
+// you can write small f or capital F 
+
+float a = 45.1234547F;
+
+System.out.println(a);// 45.123455
+
+
+double b =  45.1234547;
+
+System.out.println(b);  //45.1234547
+
+
+
+
+}
+
+}
+
+
+10.
+
+NOTE:
+1.char can also be stored into the float 
+
+
+class f11
+{
+
+public static void main(String hathi[])
+{
+char a=97;
+float b =a;
+System.out.println(b);
+
+}
+}
+
+
+
+DOUBLE DATA TYPE : DOUBLE DATA TYPE : DOUBLE DATA TYPE : 
+
+
+
+
+1.
+
+
+nOTE: INTEGER  ko double me store karwa sakte hain.
+
+class h1{
+
+public static void main (String hathi[])
+{
+
+double a = 45;
+
+System.out.println(a);// 45.0
+
+}
+
+}
+
+
+2.
+
+
+class h2{
+
+
+
+public static void main (String hathi[])
+{
+
+
+
+double a = 45.;
+
+System.out.println(a);// 45.0
+
+
+
+
+}
+
+}
+
+3.
+
+
+class h3{
+
+
+
+public static void main (String hathi[])
+{
+
+double e = 45d; // correct but not recommended 
+
+System.out.println(e);
+
+double f= 45D; // correct but not recommended 
+
+System.out.println(f);
+
+double a = 45.f;
+
+System.out.println(a);// 45.0
+
+double b = 45.5f;
+
+System.out.println(b);//45.5
+
+double c = 45.5;
+
+System.out.println(c);//45.5
+
+float d = 45.5f;
+
+System.out.println(d);//45.5 
+
+}
+
+}
+
+4.
+
+
+
+class h4{
+
+
+
+public static void main (String hathi[])
+{
+
+
+System.out.println(Float.MAX_VALUE); // 3.4028235E38
+
+
+System.out.println(Float.MIN_VALUE); // 1.4E-45
+
+System.out.println(Double.MAX_VALUE); // 1.7976931348623157E308
+
+System.out.println(Double.MIN_VALUE); // 4.9E-324
+
+
+System.out.println(Byte.MAX_VALUE); // 127
+
+System.out.println(Byte.MIN_VALUE); //
+
+
+System.out.println(Short.MAX_VALUE);// 32767
+
+System.out.println(Short.MIN_VALUE); // -32768
+
+System.out.println(Integer.MAX_VALUE); // 2147483647
+
+System.out.println(Integer.MIN_VALUE); // -2147483648
+
+System.out.println(Long.MAX_VALUE);// 9223372036854775807
+
+System.out.println(Long.MIN_VALUE); //-9223372036854775808
+
+System.out.println(Character.MAX_VALUE);// ?
+
+System.out.println(Character.MIN_VALUE); // (space)
+
+}
+
+}
+
+5.
+
+
+class h5{
+
+public static void main (String hathi[])
+{
+
+byte a = 4;
+
+short b = 32673;
+
+int c = 33435;
+
+long d = 566565663;
+
+float e = 45.3f;
+
+char f= 56;
+
+long h = 50;
+
+long i =566565663L;
+
+double g =a;
+System.out.println(g);// 4.0
+
+g=b;
+
+System.out.println(g);// 32673.0
+
+g=c;
+
+System.out.println(g);// 33435.0
+
+g=d;
+
+System.out.println(g);// 5.66565663E8
+
+g=e;
+
+System.out.println(g);// 45.29999923706055
+
+g=f;
+
+System.out.println(g);// 56.0
+
+g=h;
+
+System.out.println(g);//50.0
+
+g=i;
+
+System.out.println(g);//5.66565663E8
+
+
+}
+
+}
+
+LONG DATA TYPE : LONG DATA TYPE : LONG DATA TYPE : 
+
+
+1.
+
+class G1{
+
+public static void main (String hathi[])
+{
+
+long a = 45; 
+
+System.out.println(a);
+
+}
+
+}
+
+2.
+
+class G2{
+
+public static void main (String hathi[])
+{
+
+long a = '45';
+
+System.out.println(a);
+
+
+}
+
+}
+/*
+
+error: unclosed character literal
+long a = '45';
+         ^
+G2.java:9: error: unclosed character literal
+long a = '45';
+            ^
+G2.java:9: error: not a statement
+long a = '45';
+           ^
+*/
+
+3.
+
+
+class G3{
+
+
+
+public static void main (String hathi[])
+{
+
+long a = 45.f;
+
+System.out.println(a);
+
+/*
+error: incompatible types: possible lossy conversion from float to long
+long a = 45.f;
+         ^
+*/
+
+}
+
+}
+
+
+4.
+
+class G4{
+
+public static void main (String hathi[])
+{
+
+long a = 45.;
+
+System.out.println(a);
+
+/*
+error: incompatible types: possible lossy conversion from double to long
+long a = 45.f;
+         ^
+*/
+
+}
+
+}
+
+5.
+
+
+class G5{
+
+public static void main (String hathi[])
+{
+
+long a = X;
+
+System.out.println(a);
+
+}
+
+}
+/*
+error: cannot find symbol
+long a = X;
+         ^
+  symbol:   variable X
+  location: class G5
+1 error
+
+*/
+
+6.
+
+
+
+class G6{
+
+
+
+public static void main (String hathi[])
+{
+
+long a = "45";
+
+System.out.println(a);
+
+ a = True;
+
+System.out.println(a);
+
+}
+
+}
+/*
+
+error: incompatible types: String cannot be converted to long
+long a = "45";
+         ^
+G6.java:13: error: cannot find symbol
+ a = True;
+     ^
+  symbol:   variable True
+  location: class G6
+2 errors
+
+*/
+
+7.
+
+
+
+class G7{
+
+
+
+public static void main (String hathi[])
+{
+
+long a =true;
+
+System.out.println(a);
+
+/*
+ error: incompatible types: boolean cannot be converted to long
+long a =true;
+        ^
+1 error
+*/
+
+
+}
+
+}
+
+8.
+
+
+
+class G8{
+
+
+
+public static void main (String hathi[])
+{
+int a = 3464;
+long b = 1l;
+long c = a +b; //max of (int,_int,_long) 
+
+// int d = a+b; //nahi likh saktee errro ayega
+/*
+ error: incompatible types: possible lossy conversion from long to int
+int d = a+b; //nahi likh saktee errro ayega
+         ^
+*/
+
+System.out.println(c);
+
+
+
+
+}
+
+}
+
+
+9.
+
+
+
+class G9{
+
+
+
+public static void main (String hathi[])
+{
+long a = 3464;
+int b = 1;
+long c = a +b; //max of (int,_long,_int) 
+
+System.out.println(c);
+
+}
+
+}
+
+10.
+
+
+class g10
+{
+
+
+public static void main (String hathi[])
+{
+ long a = 9223372036854775807L;
+
+ System.out.println(a); //  9223372036854775807
+
+
+
+}
+}
+
+11.
+
+class g11
+{
+
+
+public static void main (String hathi[])
+{
+ long a = 9223372036854775807l; //smaal l 
+
+ System.out.println(a); //  9223372036854775807
+
+
+
+}
+}
+
+12..
+
+
+class g12
+{
+
+
+public static void main (String hathi[])
+{
+ long a = 9223372036854775807 ; 
+
+/* was expecting ki , this would get printed but the compiler
+
+ treated it as the integer not float , and this number was
+
+way beyond the range of integer and hence we got the error 
+
+*/
+
+ System.out.println(a); 
+
+}
+}
+/*
+
+ error: integer number too large: 9223372036854775807
+ long a = 9223372036854775807 ;
+
+*/
+
+13.
+
+
+class g13
+{
+
+
+public static void main (String hathi[])
+{
+ long a = 9223372036854775808L; 
+
+
+ System.out.println(a); 
+
+}
+}
+
+/*
+error: integer number too large: 9223372036854775808
+ long a = 9223372036854775808L;
+          ^
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

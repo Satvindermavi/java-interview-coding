@@ -1,0 +1,137 @@
+
+1.Agar kisi method me parameter class type kaa hai to us method ko call
+ karte waqt usme hamein ya to object return karenge ya uska
+ refrence. 
+2.Agar kisi method  me parameter interface type ka hai...to us
+ interface ko jo class implement kar rhi hogi  uska object
+ return krana parega ya uska refrence, at the time of calling
+ of that object.
+3.Agar kisi method ka return type class hai . To usme class ka object ya
+ uska refrence return karna parega
+4.Agar kisi method ka return type interface hai ..to us interface ko implement
+ karne waali class ka object ya uska refrence return karn parega 
+
+
+class A{
+
+void m1()
+{
+System.out.println("m1");
+}
+
+boolean m2()
+{
+System.out.println("m2");
+return true;
+}
+
+char m3()
+{
+System.out.println("m2");
+return 'a';
+}
+
+String m4()
+{
+System.out.println("m2");
+return "hello";
+}
+
+float m5()
+{
+System.out.println("m2");
+return 545.6f;
+}
+
+
+double m5()
+{
+System.out.println("m2");
+return 34.5;
+}
+
+int m6()
+{
+System.out.println("m2");
+return 0;
+}
+
+void  m7(int x)
+{
+System.out.println("m2");
+}
+
+
+void  m8(boolean x,String s)
+{
+System.out.println("m2");
+}
+
+
+void  m9(String x,String s,float f)
+{
+System.out.println("m2");
+}
+
+
+char  m9(char c)
+{
+System.out.println("m2");
+return 's'
+}
+
+
+A  m10()
+{
+System.out.println("m2");
+return new A();
+}
+
+
+void  m11(A a)
+{
+System.out.println("m2");
+}
+
+
+void  m11(double d,double d2)
+{
+System.out.println("m2");
+}
+
+void  m11(B b)
+{
+System.out.println("m2");
+}
+
+void  m11()
+{
+System.out.println("m2");
+}
+
+void  m11(I i)
+{
+System.out.println("m2");
+}
+
+
+I  m12()
+{
+System.out.println("m2");
+}
+
+}
+
+
+
+class B
+{
+
+}
+
+
+interface I
+{
+
+}
+

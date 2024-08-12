@@ -1,0 +1,80 @@
+import java.util.Scanner;
+class Interview
+{
+String name, companyName,marks;
+String aptiRound;
+String gdRound;
+String technicalRound;
+String hrRound;
+Scanner sc = new Scanner(System.in);
+
+ Interview aptiRound()
+{
+System.out.println("Enter the marks you got in the aptiRound");
+int aptimarks = sc.nextInt();
+if (aptimarks>=60)
+{
+System.out.println("you are selectd fo the next round");
+return this;
+}
+
+else
+{
+System.out.println("you are disqualified");
+exit(0);
+}
+}
+
+}
+
+Interview gdRound()
+{
+System.out.println("Enter the marks you got in the gdRound");
+int gdmarks = sc.nextInt();
+if (gdmarks>=60)
+{
+System.out.println("you are selectd fo the next round");
+return this;
+}
+else
+{
+System.out.println("you are disqualified");
+exit(0);
+}
+}
+}
+
+Interview technicalRound()
+{
+System.out.println("Enter the marks you got in the technicalRound");
+int technicalRound = sc.nextInt();
+
+if (technicalRound>=60)
+{
+System.out.println("you are selectd fo the next round");
+return this;
+}
+else
+{
+System.out.println("you are disqualified");
+exit(0);
+}
+}
+}
+
+void hrRound()
+{
+System.out.println("you have enerd the final round");
+
+}
+
+
+public static void main (String hathi[])
+{
+
+new Interview().aptiRound().gdRound().technicalRound().hrRound();
+
+}
+
+
+}

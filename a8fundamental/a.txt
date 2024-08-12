@@ -1,0 +1,1539 @@
+Data Types:
+
+
+-These are the concepts  by the help of which we can have the 
+knowledge about the type of the variable, size of the variable and 
+range of the variable.
+
+-In java every variable(or any expression) must have some type , 
+any variable , cannot be declared without declaring its type.
+
+-Each and every data-type is strictly defined and it should be checked
+ by the compiler for checking the type compatibility.
+
+- Hence we can conclude ki java is strictly/ stronglgy typed
+ programming language hai.
+
+
+- for example : int x =10.5;
+
+ means once you have  have declared x as int type , you cannot 
+ assign any other value except the integer values.
+
+
+-There are bassically two types of the data types :
+
+1.PRIMITIVE DATA TYPES 
+2.NON-PRIMITIVE DATA TYPES 
+
+---PRIMITVE HAVE BEEN FURTHER DIVIDED INTO THE :
+
+   A.Numeric Primitive data types 
+   B.Non-Numeric Primitive data types
+
+----Following are the Numeric Primitive data types:
+    a.byte
+    b.short
+    c.int
+    d.long
+
+----Following are the Non-Numeric Primitive data types:
+   a.char
+   b.boolean
+
+
+
+---FOLLOWING ARE THE NON-PRIMITIVE DATA TYPES : 
+ 
+
+   A.objects
+   B.classes
+   C.arrays
+   D.String
+   E.Interface
+
+
+
+
+1.BYte data type 
+2.Character data type
+3.Integer data type
+4.Short data type
+5.Boolean data type
+6
+
+BYTE DATA TYPE :  BYTE DATA TYPE : BYTE DATA TYPE : BYTE DATA TYPE :
+
+
+-Size : 1 byte (8 bits)
+-It is signed data type
+-Range : -128 to 127 
+-uniocde Integer values gets stored in it.
+-
+
+NOte: 
+1.Positive numbers are represented as it is in the memory, or we 
+can say that the 2's complementt of the positive numbers is that 
+number itself.
+2.If the number is negative then the 2's complement is represented 
+ of that  very number.
+
+Enote: 
+In java by default every integer nummber in java is considered as of 
+the int type.
+
+-WHY 1 byte consists of only 8 bits ?
+
+Earlier the number of the allowed characters in C/C++ were 256
+which means earlier the programming languages used to follow 
+the ASCII code . 
+
+
+with 1 bit we can represent 2^1 values = 2 values
+
+with 2 bit we can represent 2^2 values = 4 values
+
+with 3 bit we can represent 2^3 values = 8 values
+.
+.
+.
+.
+with 8 bit we can represent 2^8 values = 256 values
+
+
+128 64 32 16 8 4 2 1 
+ 1  1   1  1 1 1 1 1  , these are only seven bits , one bit will be
+ appended and that will be representing the sign of the number .
+let the number be 255 and let it be the +ve number.
+
+The binary representation of the 255 : 0 1 1 1 1 1 1 1 
+
+THe MSB here is 0 , and the LSB here is 1 .
+
+Suppose we type the character 'a' from the our keyboard , and this 
+
+character 'a' will be converted into its corresponding ASCII (In c/c++) 
+
+code , and that code which is an integer value will further get 
+
+converted into the binary nummber , so that the machine could 
+
+understaand that. 
+
+hence jab bhi ham keyboard se koi na koi character press karenge 
+
+to uske liye memory me jagha to reserve karwaani hi paregi.
+
+maan liziyie hamne '0' character ko press kiya , ab isko store 
+
+karwaane k liye to 1 bit bhi kaafi hai, lekin agar hamne 
+
+koi aisa character press kar diya jise jav ham binary me convert
+ 
+
+karein to 8 bits lagein in totality (including the sign bit)  , to 
+
+usko store karwane k liye to memorry me 8 bits ki jagah reserve 
+karwaaani paregi...hence in genral ham keyboard se koi bhi 
+
+character press kar sakte hain , fir chahe use store hone me 1 bit
+
+lage , 2 bits lage ,  and so on chahe 8 bits lagein. hence 
+
+ham in genral 8 bits ki space ko reserve kar dete hain.. so that
+ agar user 8 bit wala characterr bhi press kare to wah bhi 
+
+easily accomodate ho jye memmory me.  Hence ek standard bana diya
+
+gya that 1 BYTE = 8 BITS . 
+
+
+
+- que : where is byte data type used ? 
+  ans : if we want to handle the data in the form of the streams , the
+  byte data type is used. When we share the data in the form of the 
+  file or we share the data through the network  , there the supported
+  format is byte.
+
+
+1. 
+
+class A1
+{
+
+public static void main (String mavi[])
+{
+byte a = 3;
+System.out.println(a);//3
+}
+}
+
+
+2.
+
+
+class A2
+{
+
+public static void main (String mavi[])
+{
+byte a = 127;
+System.out.println(a);//127
+}
+}
+
+3.
+
+
+class A3
+{
+
+public static void main (String mavi[])
+{
+byte a = 128; // byte ki range se bari value ko hold krana chaha
+System.out.println(a);
+}
+}
+
+
+/*
+ error: incompatible types: possible lossy conversion from int to byte
+byte a = 128;
+*/
+
+4.
+
+class A4
+{
+
+public static void main (String mavi[])
+{
+byte a = -129; // byte ki range se bari value ko hold krana chaha
+System.out.println(a);
+}
+}
+
+/*
+
+ incompatible types: possible lossy conversion from int to byte
+byte a = -129;
+         ^
+1 error
+
+*/
+
+
+5.
+
+class A5
+{
+
+public static void main (String mavi[])
+{
+byte a = 2147483649; // int ki range se bari value ko hold krana chaha
+System.out.println(a);
+}
+}
+/*
+error: integer number too large: 2147483649
+byte a = 2147483649;
+         ^
+*/
+
+Note: agar ham long ki range se bhi bara integer  hold karwana 
+ chahenge tab bhi integer number too large errro ayeyga 
+
+6.
+
+class A6
+{
+
+public static void main (String mavi[])
+{
+byte a = 1.5f;
+System.out.println(a);
+}
+}
+/*
+error: incompatible types: possible lossy conversion from 
+float to byte byte a = 1.5f;
+         ^
+*/
+
+7.
+
+
+class A7
+{
+
+public static void main (String mavi[])
+{
+byte a = 1.5;
+System.out.println(a);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from double
+  to byte  
+byte a = 1.5;
+         ^
+*/
+
+8.
+
+class A8
+{
+
+public static void main (String mavi[])
+{
+byte a = 'x';
+System.out.println(a); 
+// 120 corresponding unicode value will get printed
+}
+}
+
+9.
+
+
+class A9
+{
+
+public static void main (String mavi[])
+{
+byte a = '?'; //corresponding unicode value will get printed
+System.out.println(a);//63
+}
+}
+
+10.
+
+class A10
+{
+
+public static void main (String mavi[])
+{
+byte a = '+'; //corresponding unicode value will get printed
+System.out.println(a);//43
+}
+}
+
+
+11.
+
+class A11
+{
+
+public static void main (String mavi[])
+{
+byte a = "string cant be converted too byte";
+System.out.println(a);
+}
+}
+/*
+ error: incompatible types: String cannot be converted to byte
+byte a = "string cant be converted too java";
+         ^
+1 error
+*/
+
+
+12.
+
+class A12
+{
+
+public static void main (String mavi[])
+{
+byte a = new A12(); // object type ko byte me store krana chahah
+System.out.println(a);
+}
+}
+/*error: incompatible types: A12 cannot be converted to byte
+byte a = new A12();
+*/
+
+
+13.
+
+class A13
+{
+
+public static void main (String mavi[])
+{
+
+A13 obj = new A13(); 
+byte a = obj; 
+System.out.println(a);
+}
+}
+/*
+ error: incompatible types: A13 cannot be converted to byte
+byte a = obj;
+         ^
+*/
+
+
+14.
+
+class A14
+{
+
+public static void main(String hathi[])
+{
+byte b = "true";
+System.out.println(b);
+
+}
+}
+/*
+error: incompatible types: String cannot be converted to boolean
+byte b = "true";
+*/
+
+15.
+
+class A15
+{
+
+public static void main(String hathi[])
+{
+byte b = True;
+System.out.println(b);
+
+}
+}
+
+NOte : jab compiler ko koi chij apne jo likhi ho ssamjh nai ati to wah 
+
+ cannot find symbol wala error de deta hai 
+
+/*
+: error: cannot find symbol
+byte b = True;
+            ^
+  symbol:   variable True
+  location: class A15
+1 error
+*/
+
+16.
+
+class A16
+{
+
+public static void main(String hathi[])
+{
+byte b = true;
+System.out.println(b);
+
+}
+}
+/*
+ error: incompatible types: boolean cannot be converted to byte
+byte b = true;
+         ^
+*/
+
+
+17.
+
+
+class A17
+{
+
+public static void main(String hathi[])
+{
+byte b = 'True';
+System.out.println(b);
+
+}
+}
+
+note: kyuki jaha par bhi ' type kar diya , compiler chahega ki iske ' 
+turant baad aap ek character(Only one) likho aur for usko ek aur ' 
+lagakar wahi close kar do.
+Agar aaap aisa nahi karoge to : unclosed character literal wala error
+ ayega.
+ 
+/*
+: error: unclosed character literal
+boolean b = 'True';
+            ^
+A17.java:6: error: unclosed character literal
+boolean b = 'True';
+                 ^
+A17.java:6: error: not a statement
+boolean b = 'True';
+*/
+
+
+18.
+
+
+class A18
+{
+
+public static void main(String hathi[])
+{
+byte b;
+System.out.println(b);
+
+}
+}
+/*
+error: variable b might not have been initialized
+System.out.println(b);
+                   ^
+*/
+
+CHAR DATA TYPE : CHAR DATA TYPE : CHAR DATA TYPE : CHAR DATA TYPE :
+
+-Size : 2 bytes (16 bits)
+-It is unsigned  data type 
+-Range : 0 to 65535
+-Integer values gets stored in it.
+-
+
+
+Question :Why the size of the char in java is 2 bytes ?
+
+
+Answer : Because Java is  UNICODE based not ASCII code based.
+
+puraani languages me 256 characters hi use kar sakte the lekin 
+
+java me aap 256 se jaada characters use kar skte ho , infact java
+
+ me aap 65536 characters ko use kar skte ho, isme me se kuch charactr
+ 
+k liye to unicode already assigned ho gaye hain , wahi kaafi unicodes
+ 
+ko future me characters k liye reserve rakha gya hai . 256 as a integr
+
+nummber ko to 8 bits me aap represent kar sakte ho , lekin 
+ 
+jaise hi 257 , 258.. and so on ko binary me convert karoge 
+
+to aapko 8 bits se jaada lagegi... Similary agar 65535 ko 
+
+binary me convert karoge to aapko 16 bits lagegi.
+
+
+hence kabhi user 255 se niche wale characters ko enter krayega kabhi
+
+255 se upar , hence java k case me jab bhi koi character enter karna 
+
+hoga to uske liye alrady 16 bits ki space reserve karwa dee jaati hai.
+
+For example 1 : the binary representation of the 65535 : 
+            
+        	1 1 1 1 1 1 1 1  1 1 1 1 1 1 1 1  six-teen bits 
+
+For example 2 : the binary representation of the 65536 : 
+            
+        	1 0 0 0 0 0 0 0 0 0 0 0  0 0  0 0 0 seven-teen bits 
+ 
+
+
+
+
+
+1.
+
+class B1
+{
+
+public static void main(String hathi[])
+{
+char x = 'd';
+
+System.out.println(x);//d
+
+char y = '*';
+System.out.println(y);//*
+
+
+}
+}
+
+Enote : 
+1.agar aaap 'd' ya'*' ko byte,short,int ya long me hold karwna chahoge
+ to iske corrresponding uski ASCII value print ho jayegi
+
+2.agar aaap 'd' ya'*' ko float ya double me hold karwna chahoge
+ to iske corrresponding uski ASCII value with decimal point print ho 
+ jayegi (asCIi_value.0)
+
+3.boolean me aap ise hold nahi karwa sakte.
+
+/* The range of the characters in thw java is from 0 to 65535 */
+/* kuch characters hi use me liye hue hain baakiyo ko reserve
+kar diya gya hai , future me use k liye */
+/* that is , jis number k corresponding koi symbol ya emoji nahi hai
+ya character nahi hai , uske corresponding ? print hota hai
+
+
+2.
+
+class B2
+{
+
+public static void main(String hathi[])
+
+char x = 45;
+
+// 45 ko as a unicode value lega and  uske corresponding , jo bhi
+ character/ symbol hoga wah use print kar dega.
+
+
+System.out.println(x);//-
+
+x = 67;
+System.out.println(x);//C
+
+x=65535;
+System.out.println(x);//?
+
+x =65536;
+System.out.println(x);//?
+
+
+//Kyuki 65535 unicode ko future me kisi symbols k liye reserve kiya 
+ gaya hoga 
+}
+}
+
+3.
+
+
+class B3
+{
+
+public static void main(String hathi[])
+{
+char x = 65536;
+System.out.println(x);
+}
+}
+/*
+error: incompatible types: possible lossy conversion from int to char
+char x = 65536;
+
+
+65535 tak ki values ko to as a , unicode integer hi lega , uske baad
+
+ waali ko integer treat karega 
+         ^
+*/
+
+
+4.
+
+class B4
+{
+
+public static void main(String hathi[])
+{
+char x = 2147483648; // max int value :2147483647
+
+System.out.println(x);
+}
+}
+
+/*
+: error: integer number too large: 2147483648
+char x = 2147483648;
+         ^
+*/
+
+5.
+
+
+class B5
+{
+
+public static void main(String hathi[])
+{
+char x = 5.6;
+System.out.println(x);//
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from double to
+ char
+char x = 5.6;
+*/
+
+
+
+
+6.
+
+class B6
+{
+
+public static void main(String hathi[])
+{
+char x = 7.8f;
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from float to char
+char x = 7.8f;
+         ^
+*/
+
+
+7.
+
+class B7
+{
+
+public static void main(String hathi[])
+{
+char x = "true";
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: String cannot be converted to char
+char x = "true";
+/
+
+8.
+
+
+class B8
+{
+
+public static void main(String hathi[])
+{
+char x = true;
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: boolean cannot be converted to char
+char x = true;
+         ^
+*/
+
+
+9.
+
+class B9
+{
+
+public static void main(String hathi[])
+{
+char x = True;
+System.out.println(x);
+}
+}
+/*
+  error: cannot find symbol
+char x = True;
+         ^
+  symbol:   variable True
+  location: class B9
+1 error
+*/
+
+10.
+class B10
+{
+
+public static void main(String hathi[])
+{
+char x = 'dd';
+System.out.println(x);
+}
+}
+/*
+: error: unclosed character literal
+char x = 'dd';
+         ^
+B10.java:6: error: unclosed character literal
+char x = 'dd';
+            ^
+B10.java:6: error: not a statement
+char x = 'dd';
+           ^
+*/
+
+11.
+
+class B11
+{
+
+public static void main(String hathi[])
+{
+char x = '9';
+System.out.println(x);//9 
+// THIS 9 WILL NOT BE OF THE INTEGERR TYPE
+}
+}
+
+
+12.
+class B12
+{
+
+public static void main(String hathi[])
+{
+char x = '10';
+System.out.println(x);
+}
+}
+/*
+ error: unclosed character literal
+char x = '10';
+         ^
+B12.java:6: error: unclosed character literal
+char x = '10';
+            ^
+B12.java:6: error: not a statement
+char x = '10';
+           ^
+3 errors
+
+*/
+
+
+13.
+
+class B13
+{
+
+public static void main(String hathi[])
+{ 
+byte a =127;
+char x1 = a;
+System.out.println(x);
+
+int b =127;
+char x2 = b;
+System.out.println(x);
+
+short c =127;
+char x3 = c;
+System.out.println(x);
+
+
+long d=127;
+char x4 = d;
+System.out.println(x);
+
+/*
+char x = 127;
+System.out.println(x);// ⌂
+*/
+
+}
+}
+/*
+error: incompatible types: possible lossy conversion from byte to char
+char x = a;
+         ^
+
+     
+B13.java:11: error: incompatible types: possible lossy conversion from int to char
+char x = b;
+         ^
+
+     
+B13.java:15: error: incompatible types: possible lossy conversion from short to char
+char x = c;
+         ^
+
+B13.java:20: error: incompatible types: possible lossy conversion from long to char
+char x = d;
+
+*/
+         ^
+
+4 errors
+
+14.
+
+
+
+class B14
+{
+
+public static void main(String hathi[])
+{ 
+int b =127;
+char x = b;
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from int to char
+char x = b;
+         ^
+1 error
+*/
+
+
+15.
+
+class B15
+{
+
+public static void main(String hathi[])
+{
+char x = 0;
+char y = 0;
+char z = x+y; (x+y ka result ayega 0, but that will be int type)
+System.out.println(z);
+}
+}
+/*
+
+max(int,type of x , type of y) wala formula laga hoga and usme int jit gaya
+ error: incompatible types: possible lossy conversion from int to char
+char z = x+y;
+          ^
+*/
+
+
+Note:
+
+class B15
+{
+
+public static void main(String hathi[])
+{
+
+char z =0;
+System.out.println(z);
+}
+}
+
+in this the 0 was treated as a unicode integer , and correspondingly 
+we get space as an output
+
+
+class B15
+{
+
+public static void main(String hathi[])
+{
+
+char z =0+0;
+System.out.println(z);
+}
+}
+
+in this the 0 was treated as a unicode integer , and correspondingly 
+we get space as an output
+
+
+16.
+
+class B16
+{
+
+public static void main(String hathi[])
+{
+char x =0+1;// yaha par int nahi balki unicode int hi treat hoga 
+System.out.println(x);//☺
+
+char y = 1+66;
+// yah par bhi kyuki hai to yee 67 hi was use expand kar k likha hai 
+System.out.println(y);//C
+
+}
+}
+
+17.
+
+
+class B17
+{
+
+public static void main(String hathi[])
+{
+char x = 0+66;
+System.out.println(x); //B
+}
+}
+
+
+18.
+
+class B19
+{
+
+public static void main(String hathi[])
+{ 
+
+char a = 42;
+System.out.println(a);//*
+
+char b = 63;
+System.out.println(b);//?
+
+char c = 36;
+System.out.println(c);//$
+
+}
+
+
+}
+
+
+19.
+
+
+class B20
+{
+
+public static void main(String hathi[])
+{ 
+
+char a = *;
+System.out.println(a);
+
+char b = ?;
+System.out.println(b);
+
+char c = $;
+System.out.println(c);
+
+
+}
+
+
+}
+
+/*
+
+error: illegal start of expression
+char a = *;
+         ^
+B20.java:7: error: illegal start of expression
+char a = *;
+          ^
+B20.java:10: error: illegal start of expression
+char b = ?;
+         ^
+B20.java:10: error: illegal start of expression
+char b = ?;
+          ^
+4 errors
+
+*/
+
+
+20.
+
+class B21
+{
+
+public static void main(String hathi[])
+{ 
+
+char a = '*';
+System.out.println(a);// *
+
+char b = '?';
+System.out.println(b); // ?
+
+char c = '$';
+System.out.println(c); // $
+
+
+}
+
+
+}
+
+
+21.
+
+
+class B22
+{
+
+public static void main(String hathi[])
+{ 
+
+char a = B;
+System.out.println(a);
+
+
+}
+
+
+}
+
+/*
+ error: cannot find symbol
+char a = B;
+         ^
+  symbol:   variable B
+  location: class B22
+1 error
+
+*/
+
+
+
+
+
+INT DATA TYPE : INT DATA TYPE : INT DATA TYPE : 
+
+
+
+
+-Size :  4 bytes (32 bits)
+-It is signed data type
+-Range : -2147483648 to 2147483647
+-Integer values gets stored in it.
+-It is the most commonly used data type .
+
+
+1.
+
+class C1
+{
+
+public static void main(String hathi[])
+{
+int x = 0;
+System.out.println(x);//0
+}
+}
+
+
+2.
+
+class C2
+{
+
+public static void main(String hathi[])
+{
+int x =5.5f;
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from float to int
+int x =5.5f;
+       ^
+*/
+
+3.
+
+
+class C3
+{
+
+public static void main(String hathi[])
+{
+int x =5.5;
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from double to int
+int x =5.5f;
+       ^
+*/
+
+
+
+
+4.
+
+
+class C4
+{
+
+public static void main(String hathi[])
+{
+int x =45l; // or int x = 45L
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from long to int
+int x =45l;
+       ^
+1 error
+       ^
+*/
+
+
+5.
+
+class C5
+{
+
+public static void main(String hathi[])
+{
+int x =2147483648; // int ki range se ek jaada
+System.out.println(x);
+}
+}
+/*
+error: integer number too large: 2147483648
+int x =2147483648;
+       ^
+*/
+
+
+6.
+
+class C6
+{
+
+public static void main(String hathi[])
+{
+int x ="true";
+System.out.println(x);
+}
+}
+/*
+  error: incompatible types: String cannot be converted to int
+int x ="true";
+       ^
+*/
+
+7.
+
+class C7
+{
+
+public static void main(String hathi[])
+{
+int x =true;
+System.out.println(x);
+}
+}
+/*
+ : error: incompatible types: boolean cannot be converted to int
+int x =true;
+       ^
+*/
+
+8.
+
+class C8
+{
+
+public static void main(String hathi[])
+{
+int x =True;
+System.out.println(x);
+}
+}
+/*
+ : error: incompatible types: boolean cannot be converted to int
+int x =true;
+       ^
+*/
+
+
+
+
+9.
+
+
+class C9
+{
+
+public static void main(String hathi[])
+{
+int x =new C9();
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: C9 cannot be converted to int
+int x =new C9();
+*/
+
+
+10.
+
+class C10
+{
+
+public static void main(String hathi[])
+{
+
+C10 obj = new C10();
+int x =obj;
+System.out.println(x);
+}
+}
+/*
+  error: incompatible types: C10 cannot be converted to int
+int x =obj;
+       ^
+*/
+
+
+11.
+
+
+class C11
+{
+
+
+public static void main (String hathi[])
+{
+
+int x = 'h';// corrersponding unnicode value will get printed
+System.out.println(x);//104
+
+ x = '&';
+System.out.println(x);//38
+
+x = '*';
+System.out.println(x);//42
+
+x='?';
+System.out.println(x);//63
+
+
+
+}
+}
+
+
+12.
+
+
+class C12
+{
+
+
+public static void main (String hathi[])
+{
+
+byte a = 5;
+int b=a;
+System.out.println(a);//5
+
+short c =124;
+int d =c;
+System.out.println(d);//124
+
+char e =45;
+int f =e;
+System.out.println(f);//45
+
+
+
+}
+}
+
+13.
+
+class C13
+{
+
+
+public static void main(String args[])
+
+{
+
+float a = 45.6f;
+int b =a;
+System.out.println(b);
+
+
+double c = 45.6;
+int d =c;
+System.out.println(d);
+
+
+int e = 4.5f;
+System.out.println(e);
+
+
+
+}
+
+}
+
+/*
+
+
+error: incompatible types: possible lossy conversion from float to int
+int b =a;
+       ^
+C13.java:15: error: incompatible types: possible lossy conversion from double to int
+int d =c;
+       ^
+C13.java:19: error: incompatible types: possible lossy conversion from float to int
+int e = 4.5f;
+        ^
+
+*/
+
+
+
+
+
+SHORT DATA TYPE: SHORT DATA TYPE: SHORT DATA TYPE:
+
+
+-Size :  2 bytes (16 bits)
+-It is signed data type
+-Range : -32768 to 32767
+-Integer values gets stored in it.
+-It is the most rarely used data type .
+
+
+ENOte: 16 bit processor means , that the insruction bits length in 
+this case is 16 bit , earlier during 1995 when there were 16 bit
+processors , hence it was more conveninent to use the short 
+data type . NOw adays there are 32 bits and the 64 bits procssors.
+ 
+
+
+1.
+
+
+class D1
+{
+
+public static void main(String hathi[])
+{
+short x =78; // it will treat is as short integer.
+System.out.println(x);
+}
+}
+
+
+2.
+
+
+class D2
+{
+
+public static void main(String hathi[])
+{
+short x =32768; // short ki range se ek upar
+System.out.println(x);
+}
+}
+/*
+ error: incompatible types: possible lossy conversion from int to short
+short x =32768;
+         ^
+*/
+
+3.
+
+class D4
+{
+
+public static void main(String hathi[])
+{
+short x =2147483648; // int ki range se ek bara
+System.out.println(x);
+}
+}
+/*
+  error: integer number too large: 2147483648
+short x =2147483648;
+         ^
+*/
+
+4.
+
+class D5
+{
+
+public static void main(String hathi[])
+{
+short x =*;
+System.out.println(x);
+}
+}
+/*
+  error: illegal start of expression
+short x =*;
+         ^
+D5.java:6: error: illegal start of expression
+short x =*;
+          ^
+*/
+
+
+5.
+
+class D6
+{
+
+public static void main(String hathi[])
+{
+short x ='*';// corrresponding unicode value will be printed
+System.out.println(x); //42
+
+short y ='a';
+System.out.println(y); //97
+
+short z = '9'; 
+// 9 ko as a character treat kiya , phir uski corresponding unicode
+// value print hogi
+System.out.println(z);//57
+
+z= 98;
+System.out.println('z');//z
+System.out.println(98);//98
+
+}
+}
+
+
+
+6.
+
+
+class D7
+{
+
+public static void main(String hathi[])
+{
+byte a=4;
+short b =a;
+System.out.println(b); //4
+
+
+
+}
+}
+
+
+7.
+
+class D8
+{
+
+public static void main(String hathi[])
+{
+char a=4;
+short b =a;
+System.out.println(b); 
+
+
+
+}
+}
+
+
+error: incompatible types: possible lossy conversion from char to short
+short b =a;
+         ^
+1 error
+
+
+

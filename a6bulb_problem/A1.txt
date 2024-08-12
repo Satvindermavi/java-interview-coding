@@ -1,0 +1,125 @@
+Requirement : Ek bulb ki factory hai , usme hamne bulb banaana hai , pehle bulb
+ 
+banana hai fir us bulb ko count karna hai ,fir uski company ka naam change 
+
+karna hai  
+
+
+
+class A1 
+{
+
+int watt ;
+
+float price ;
+
+String color ;
+
+
+boolean state ; 
+
+int counter ;
+
+
+String cname ;
+
+
+void showDetails()
+{
+
+} 
+
+
+void changeState()
+{
+
+}
+
+
+void countBulb()
+{
+
+}
+
+void changeCompanyName()
+{
+
+}
+
+Condition :
+
+1.
+Here you have to decide ki konsa data member/ member function
+
+staticc hona chahyiye and konsa wala non-static hona chahyiye.
+
+2.
+
+Suppose you are creating BULB forr MAVI company 
+
+3.
+
+Now it is my requirement that if we dont't creating Bulb , (means , ham Bulb 
+
+class  ka koi object nahi bna rhe ) , 
+
+so countr initiaally assisgned at loading time and if we call the countbulb 
+
+method so it genrate the output 0 bulb is created. 
+
+
+4. 
+
+Now you have to create the three types of the bulb and print the detail of the 
+
+each bulb separately. 
+
+
+5. 
+
+agar aap ek bulb create kar lo to coounter automatically invoked ho jaye , 
+
+and if you call the countBulb() method , it should print total number of 
+
+Bulb is 1 , and so on....like if we create three bulb object it should print
+
+total number off bilb is 3 .
+
+(mtalb hamne har object ki respecct me metthod ko chalana hai , hence yaha ham
+
+init block ko use me lenge ) 
+
+6. Now you have to create three difffernet types of the bulb and , and print 
+
+its details , then countBulb() method is again called by you and it print
+
+the total number of bulb is 6. 
+
+
+7. 
+
+Now suppose the bulb is on (true) , so you have to change the bulb state by 
+
+calling changeStatemethod()
+
+
+hamari requirement yah hai ki innitially to koi bhi bulb nahi bana hai , hence 
+
+uska count to x=zero hona hai , hence mattlab abhi bina object create, karne 
+
+se pehle hamne dikhana hai , to isliye ham count wala static le lenge , because
+
+hamin pata hai static to object kya balki main se bhi pehle chalne lagta hai
+
+
+
+8. now chnge copanyname to PHILIPS 
+
+
+
+public static void main (String hathi[])
+
+{
+
+}
+}

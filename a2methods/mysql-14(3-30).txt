@@ -1,0 +1,839 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 12
+Server version: 8.0.36 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
++--------------------+
+3 rows in set (0.09 sec)
+
+mysql> CREATE DATABASE MRSPTU_TEAM;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mrsptu_team        |
+| mysql              |
+| performance_schema |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database mrsptu team;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'team' at line 1
+mysql> create database mrsptu,team;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ',team' at line 1
+mysql> create database mrsptu@team;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@team' at line 1
+mysql> create database mrsptu_team;
+ERROR 1007 (HY000): Can't create database 'mrsptu_team'; database exists
+mysql> create database mrsptu_teams;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> create database mrsptu$teams;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> create database mrsptu@teams;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@teams' at line 1
+mysql> create database mrsptu*teams;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*teams' at line 1
+mysql> drop mrsptu_team;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mrsptu_team' at line 1
+mysql> drop database mrsptu_team;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mrsptu$teams       |
+| mrsptu_teams       |
+| mysql              |
+| performance_schema |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql>   create database a1;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create database a2;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select database();
++------------+
+| database() |
++------------+
+| NULL       |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use database a1;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use a1;
+Database changed
+mysql> select databse();
+ERROR 1305 (42000): FUNCTION a1.databse does not exist
+mysql> select database();
++------------+
+| database() |
++------------+
+| a1         |
++------------+
+1 row in set (0.00 sec)
+
+mysql> use  a2;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| a2         |
++------------+
+1 row in set (0.00 sec)
+
+mysql> create table PLAYER_INFO
+    -> (
+    ->  s.NO int ,
+    -> Player_name varchar(12)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.NO int ,
+Player_name varchar(12)
+)' at line 3
+mysql> create table PlayerInfo(SNO int , Pname varchar(12));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> SHOW TABLES;
++--------------+
+| Tables_in_a2 |
++--------------+
+| playerinfo   |
++--------------+
+1 row in set (0.02 sec)
+
+mysql> SHOW COLUMNS FROM playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| SNO   | int         | YES  |     | NULL    |       |
+| Pname | varchar(12) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql>  desc table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql>  desc playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| SNO   | int         | YES  |     | NULL    |       |
+| Pname | varchar(12) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> drop table playerinfo;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> desc playerinfo;
+ERROR 1146 (42S02): Table 'a2.playerinfo' doesn't exist
+mysql>  create table PlayerInfo( Sno int , PName varhar(10) );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varhar(10) )' at line 1
+mysql>  create table PlayerInfo( Sno int , PName varhar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'varhar(10))' at line 1
+mysql>  create table PlayerInfo( Sno int , PName varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> show tables;
++--------------+
+| Tables_in_a2 |
++--------------+
+| playerinfo   |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> insert into playerinfo(Sno,PName)
+    -> values(1,'dhoni');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into playerinfo (Sno.Pname ) values(2,"sachin");
+ERROR 1054 (42S22): Unknown column 'Sno.Pname' in 'field list'
+mysql> insert into playerinfo (Sno,Pname ) values(2,"sachin");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show tables;
++--------------+
+| Tables_in_a2 |
++--------------+
+| playerinfo   |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> desc playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Sno   | int         | YES  |     | NULL    |       |
+| PName | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> show columns from playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Sno   | int         | YES  |     | NULL    |       |
+| PName | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
++------+--------+
+2 rows in set (0.00 sec)
+
+mysql> insert into playerinfo(sno,pname)
+    -> values(3,'virat'),(4,'rohit');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
+|    3 | virat  |
+|    4 | rohit  |
++------+--------+
+4 rows in set (0.00 sec)
+
+mysql> insert into playerinfo (Sno,Pname ) values(2,"raina");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
+|    3 | virat  |
+|    4 | rohit  |
+|    2 | raina  |
++------+--------+
+5 rows in set (0.00 sec)
+
+mysql> values(3,'virat'),(4,'rohibdfajfsdjnfajndjjdjnt');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(3,'virat'),(4,'rohibdfajfsdjnfajndjjdjnt')' at line 1
+mysql> values(3,'virat'),(4,'rohibdfajfsdjnfajndjjdjnt');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(3,'virat'),(4,'rohibdfajfsdjnfajndjjdjnt')' at line 1
+mysql> show warnings;
++-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Level | Code | Message                                                                                                                                                                                       |
++-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Error | 1064 | You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(3,'virat'),(4,'rohibdfajfsdjnfajndjjdjnt')' at line 1 |
++-------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.00 sec)
+
+mysql> insert into playerinfo (sno,pname) values(tt,'virat');
+ERROR 1054 (42S22): Unknown column 'tt' in 'field list'
+mysql> insert into playerinfo (sno,pname) values('dd','virat');
+ERROR 1366 (HY000): Incorrect integer value: 'dd' for column 'Sno' at row 1
+mysql> desc playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Sno   | int         | YES  |     | NULL    |       |
+| PName | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into playerinfo (pname) values('virat');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
+|    3 | virat  |
+|    4 | rohit  |
+|    2 | raina  |
+| NULL | virat  |
++------+--------+
+6 rows in set (0.00 sec)
+
+mysql> insert into playerinfo (sno) values(45);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
+|    3 | virat  |
+|    4 | rohit  |
+|    2 | raina  |
+| NULL | virat  |
+|   45 | NULL   |
++------+--------+
+7 rows in set (0.00 sec)
+
+mysql> desc playerinfo;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Sno   | int         | YES  |     | NULL    |       |
+| PName | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into playerinfo () values();
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from playerinfo;
++------+--------+
+| Sno  | PName  |
++------+--------+
+|    1 | dhoni  |
+|    2 | sachin |
+|    3 | virat  |
+|    4 | rohit  |
+|    2 | raina  |
+| NULL | virat  |
+|   45 | NULL   |
+| NULL | NULL   |
++------+--------+
+8 rows in set (0.00 sec)
+
+mysql> drop table playerinfo;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> create table MRSPTU( sn0 int not null , pname varchar(20));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into mrsptu(sno,pname)
+    -> values(1,'kohli'),
+    -> values(2,'sehwag');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values(2,'sehwag')' at line 3
+mysql> insert into mrsptu(sno,pname)
+    -> values(1,'kohli'),
+    -> (2,'sehwag');
+ERROR 1054 (42S22): Unknown column 'sno' in 'field list'
+mysql> insert into mrsptu(sn0,pname)
+    -> values(1,'sachin'),
+    -> (2,'dravid');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from playerinfo;
+ERROR 1146 (42S02): Table 'a2.playerinfo' doesn't exist
+mysql> select * from mrsptu;
++-----+--------+
+| sn0 | pname  |
++-----+--------+
+|   1 | sachin |
+|   2 | dravid |
++-----+--------+
+2 rows in set (0.00 sec)
+
+mysql> insert into mrsptu(pname)
+    -> values('raina');
+ERROR 1364 (HY000): Field 'sn0' doesn't have a default value
+mysql> desc mrsptu;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sn0   | int         | NO   |     | NULL    |       |
+| pname | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql>  show warnings;
+Empty set (0.00 sec)
+
+mysql> select * from mrsptu;
++-----+--------+
+| sn0 | pname  |
++-----+--------+
+|   1 | sachin |
+|   2 | dravid |
++-----+--------+
+2 rows in set (0.00 sec)
+
+mysql> insert into mrsptu()values();
+ERROR 1364 (HY000): Field 'sn0' doesn't have a default value
+mysql> create table newTable(sno int default 62 , pname varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc mrsptu;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sn0   | int         | NO   |     | NULL    |       |
+| pname | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc newTable;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sno   | int         | YES  |     | 62      |       |
+| pname | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into newTable(sno,pnAME)
+    -> VALUES(1,'MAVI');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from newTable;
++------+-------+
+| sno  | pname |
++------+-------+
+|    1 | MAVI  |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into newTable(pnAME)
+    -> values('dhillon');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from newTable;
++------+---------+
+| sno  | pname   |
++------+---------+
+|    1 | MAVI    |
+|   62 | dhillon |
++------+---------+
+2 rows in set (0.00 sec)
+
+mysql> insert into newTable()
+    -> values();
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from newTable;
++------+---------+
+| sno  | pname   |
++------+---------+
+|    1 | MAVI    |
+|   62 | dhillon |
+|   62 | NULL    |
++------+---------+
+3 rows in set (0.00 sec)
+
+mysql> create table newTable1(sno int default 62 not null , pname varchar(10));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> insert into newTable1()values();
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table newTable2(sno int default 'ex' not null , pname varchar(10));
+ERROR 1067 (42000): Invalid default value for 'sno'
+mysql> create table newTable2(sno int default ex not null , pname varchar(10));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ex not null , pname varchar(10))' at line 1
+mysql> create table newTable2(sno int default 90 not null , pname varchar(10) default 'ex');
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table table3(sno int , name varchar(10));
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> insert into table3(sno,name)
+    -> values(1,'adam'),(1,'adam');
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from table3;
++------+------+
+| sno  | name |
++------+------+
+|    1 | adam |
+|    1 | adam |
++------+------+
+2 rows in set (0.00 sec)
+
+mysql> create table4(sno int name varchar(10) primary key (sno));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table4(sno int name varchar(10) primary key (sno))' at line 1
+mysql> create table4(sno int, name varchar(10) primary key (sno));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table4(sno int, name varchar(10) primary key (sno))' at line 1
+mysql> create table4(sno int, name varchar(10), primary key (sno));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table4(sno int, name varchar(10), primary key (sno))' at line 1
+mysql> create table table4(sno int, name varchar(10), primary key (sno));
+Query OK, 0 rows affected (0.09 sec)
+
+mysql> desc table4;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sno   | int         | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into table4(sno,name)
+    -> values(1,'ravi'),
+    -> (1,'honey');
+ERROR 1062 (23000): Duplicate entry '1' for key 'table4.PRIMARY'
+mysql> insert into table4(sno,name)
+    -> values(1,'mahesh'),(2,'mahesh');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from table4;
++-----+--------+
+| sno | name   |
++-----+--------+
+|   1 | mahesh |
+|   2 | mahesh |
++-----+--------+
+2 rows in set (0.00 sec)
+
+mysql> show columns from table4;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sno   | int         | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> desc table4;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| sno   | int         | NO   | PRI | NULL    |       |
+| name  | varchar(10) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> create table table5(sno int, name varchar(10), primary key (sno), primary key(name));
+ERROR 1068 (42000): Multiple primary key defined
+mysql> insert into table5(sno , name)
+    -> values(1,'maesh'),(2,'mahesh');
+ERROR 1146 (42S02): Table 'a2.table5' doesn't exist
+mysql> create table table6(sno int auto_INCREMENT, name varchar(10), primary key (sno), primary key(name));
+ERROR 1068 (42000): Multiple primary key defined
+mysql> create table table6(sno int auto_INCREMENT, name varchar(10), primary key (sno));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> INSERT INTO TABLEE6(SNO,NAME)
+    -> VALUES(1,MAVI)
+    -> ,('DHILLON');
+ERROR 1146 (42S02): Table 'a2.tablee6' doesn't exist
+mysql> INSERT INTO TABLE6(SNO,NAME)
+    -> VALUES(1,'MAVI'),('MAHII');
+ERROR 1136 (21S01): Column count doesn't match value count at row 2
+mysql> INSERT INTO TABLE6(NAME)
+    -> VALUES('MAVI');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from table6;
++-----+------+
+| sno | name |
++-----+------+
+|   1 | MAVI |
++-----+------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO TABLE6(NAME)
+    -> values('mahesh');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from table6;
++-----+--------+
+| sno | name   |
++-----+--------+
+|   1 | MAVI   |
+|   2 | mahesh |
++-----+--------+
+2 rows in set (0.00 sec)
+
+mysql> create table table7(sno int auto_INCREMENT default 34, name varchar(10), primary key (sno));
+ERROR 1067 (42000): Invalid default value for 'sno'
+mysql> create table table7(sno int auto_INCREMENT default 0, name varchar(10), primary key (sno));
+ERROR 1067 (42000): Invalid default value for 'sno'
+mysql> create table table7(sno int auto_INCREMENT default 0, name varchar(10), primary key (sno));
+ERROR 1067 (42000): Invalid default value for 'sno'
+mysql> create database m8we;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create table table7(sno int auto_increment, name varchar(10));
+ERROR 1075 (42000): Incorrect table definition; there can be only one auto column and it must be defined as a key
+mysql> create table table7(sno int auto_increment, name varchar(10) primary key(sno));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(sno))' at line 1
+mysql> create table table7(sno int auto_increment, name varchar(10) ,primary key(sno));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into table7(name)
+    -> values('riik'),(''himsh);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'himsh)' at line 2
+mysql> values('riik'),('himsh');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '('riik'),('himsh')' at line 1
+mysql> insert into table7(name)
+    -> values('himesh');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from table7;
++-----+--------+
+| sno | name   |
++-----+--------+
+|   1 | himesh |
++-----+--------+
+1 row in set (0.00 sec)
+
+mysql> insert into table7(name)
+    -> values('raina');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into table7(name)
+    -> values('raina'),('suresh');
+Query OK, 2 rows affected (0.01 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from table7;
++-----+--------+
+| sno | name   |
++-----+--------+
+|   1 | himesh |
+|   2 | raina  |
+|   3 | raina  |
+|   4 | suresh |
++-----+--------+
+4 rows in set (0.00 sec)
+
+mysql> create table Employees (id int auto_increment , first_name varchar(10) not null ,second_name varchar(10) not null , age int not null , current_status varchar(30) not null ,primary key (id));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc Employees;
++----------------+-------------+------+-----+---------+----------------+
+| Field          | Type        | Null | Key | Default | Extra          |
++----------------+-------------+------+-----+---------+----------------+
+| id             | int         | NO   | PRI | NULL    | auto_increment |
+| first_name     | varchar(10) | NO   |     | NULL    |                |
+| second_name    | varchar(10) | NO   |     | NULL    |                |
+| age            | int         | NO   |     | NULL    |                |
+| current_status | varchar(30) | NO   |     | NULL    |                |
++----------------+-------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> create table Employee (id int auto_increment , first_name varchar(10) not null ,second_name varchar(10) not null , age int not null , current_status varchar(30) default 'employed' not null ,primary key (id));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> desc Employee;
++----------------+-------------+------+-----+----------+----------------+
+| Field          | Type        | Null | Key | Default  | Extra          |
++----------------+-------------+------+-----+----------+----------------+
+| id             | int         | NO   | PRI | NULL     | auto_increment |
+| first_name     | varchar(10) | NO   |     | NULL     |                |
+| second_name    | varchar(10) | NO   |     | NULL     |                |
+| age            | int         | NO   |     | NULL     |                |
+| current_status | varchar(30) | NO   |     | employed |                |
++----------------+-------------+------+-----+----------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> create table Employe (id int auto_increment primary key, first_name varchar(10) not null ,second_name varchar(10) not null , age int not null , current_status varchar(30) default 'employed' not null);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc Employe;
++----------------+-------------+------+-----+----------+----------------+
+| Field          | Type        | Null | Key | Default  | Extra          |
++----------------+-------------+------+-----+----------+----------------+
+| id             | int         | NO   | PRI | NULL     | auto_increment |
+| first_name     | varchar(10) | NO   |     | NULL     |                |
+| second_name    | varchar(10) | NO   |     | NULL     |                |
+| age            | int         | NO   |     | NULL     |                |
+| current_status | varchar(30) | NO   |     | employed |                |
++----------------+-------------+------+-----+----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> insert into Employe(id,first_name,second_name,age,current status)
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status)' at line 1
+mysql> insert into Employe(first_name,second_name,age,current status)
+    -> values('a','b',5);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status)
+values('a','b',5)' at line 1
+mysql> insert into Employe(first_name,second_name,age,current status)
+    -> values(1,'a','b',34,'emp');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'status)
+values(1,'a','b',34,'emp')' at line 1
+mysql> insert into Employe(first_name,second_name,age,current_status)
+    -> values('a','b',34,'emp');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Employe;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
++----+------------+-------------+-----+----------------+
+1 row in set (0.00 sec)
+
+mysql> insert into Employe(first_name,second_name,age)
+    -> values('d','c',56);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from Employe;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
+|  2 | d          | c           |  56 | employed       |
++----+------------+-------------+-----+----------------+
+2 rows in set (0.00 sec)
+
+mysql> select id from Employe;
++----+
+| id |
++----+
+|  1 |
+|  2 |
++----+
+2 rows in set (0.00 sec)
+
+mysql> select first_name from Employee;
+Empty set (0.00 sec)
+
+mysql> select first_name from Employe;
++------------+
+| first_name |
++------------+
+| a          |
+| d          |
++------------+
+2 rows in set (0.00 sec)
+
+mysql> select first_name,second_name from Employe;
++------------+-------------+
+| first_name | second_name |
++------------+-------------+
+| a          | b           |
+| d          | c           |
++------------+-------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from employe;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
+|  2 | d          | c           |  56 | employed       |
++----+------------+-------------+-----+----------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from employe where age = 34;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
++----+------------+-------------+-----+----------------+
+1 row in set (0.00 sec)
+
+mysql> selct id as sno from employe;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct id as sno from employe' at line 1
+mysql> selct id as sno, from employe;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct id as sno, from employe' at line 1
+mysql> selct id as sno from employe;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct id as sno from employe' at line 1
+mysql> select id as sno from employe;
++-----+
+| sno |
++-----+
+|   1 |
+|   2 |
++-----+
+2 rows in set (0.00 sec)
+
+mysql> desc employe;
++----------------+-------------+------+-----+----------+----------------+
+| Field          | Type        | Null | Key | Default  | Extra          |
++----------------+-------------+------+-----+----------+----------------+
+| id             | int         | NO   | PRI | NULL     | auto_increment |
+| first_name     | varchar(10) | NO   |     | NULL     |                |
+| second_name    | varchar(10) | NO   |     | NULL     |                |
+| age            | int         | NO   |     | NULL     |                |
+| current_status | varchar(30) | NO   |     | employed |                |
++----------------+-------------+------+-----+----------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> show tables;
++--------------+
+| Tables_in_a2 |
++--------------+
+| employe      |
+| employee     |
+| employees    |
+| mrsptu       |
+| newtable     |
+| newtable1    |
+| newtable2    |
+| table3       |
+| table4       |
+| table6       |
+| table7       |
++--------------+
+11 rows in set (0.00 sec)
+
+mysql> select * from employe;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
+|  2 | d          | c           |  56 | employed       |
++----+------------+-------------+-----+----------------+
+2 rows in set (0.00 sec)
+
+mysql> update employe set second_name='mahesh' where second_name = 'c';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employe;
++----+------------+-------------+-----+----------------+
+| id | first_name | second_name | age | current_status |
++----+------------+-------------+-----+----------------+
+|  1 | a          | b           |  34 | emp            |
+|  2 | d          | mahesh      |  56 | employed       |
++----+------------+-------------+-----+----------------+
+2 rows in set (0.00 sec)
+
+mysql> drop table employe;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> desc employe;
+ERROR 1146 (42S02): Table 'a2.employe' doesn't exist
+mysql> create table Emp (id int auto_increment primary key, first_name varchar(10) not null ,second_name varchar(10) not null , age int not null , current_status varchar(30) default 'employed' not null);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> insert into (first_name,second_name,age)
+    -> values ('mavi','singh',89),('dhillon',
